@@ -1,0 +1,188 @@
+body {
+    font-family: 'Lato', sans-serif;
+    /* font-family: 'Arial', sans-serif; */
+    margin: 0;
+    padding: 0;
+    background-color: rgba(173, 216, 230, 0.1);
+    /* Very light and transparent blue */
+    text-align: center;
+    color: #000;
+    /* Keep text in black */
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+
+.main-title {
+    font-size: 1.5em;
+    /* Adjust the font size for better fit */
+    margin: 0 auto 20px;
+    /* Center align with auto margins */
+    width: 90%;
+    /* Set a wider width */
+    padding: 10px;
+    /* Add some padding */
+    line-height: 1.4;
+    /* Adjust line height for readability */
+    text-align: center;
+    /* Center text alignment */
+}
+
+.header img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: rgba(100, 149, 237, 0.3);
+    /* Increase transparency */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 28%;
+    /* Set a fixed width for all cards */
+    display: inline-block;
+    /* Align cards inline */
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.toggle-button {
+    background-color: #ffffff;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 80px;
+    margin: 20px auto;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.toggle-slider {
+    background-color: rgba(100, 149, 237, 0.3);
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    width: 30px;
+    transition: all 0.3s;
+}
+
+.toggle-active .toggle-slider {
+    left: 45px;
+    background-color: #4caf50;
+}
+
+.insure-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.4em;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+    /* Center button in the card */
+    width: 80%;
+    /* Larger button */
+}
+
+.insure-button:hover {
+    background-color: #218838;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.total-card {
+    width: calc(58% + 20px);
+    background-color: rgba(48, 48, 48, 0.2);
+    margin: 20px auto;
+    display: block;
+}
+
+/* You may need to adjust the media query for responsiveness */
+@media (max-width: 1024px) {
+    .total-card {
+        width: 100%;
+        /* Full width on smaller screens */
+    }
+}
+
+.price {
+    font-size: 1.2em;
+    /* Increased font size for the base price */
+    font-weight: bold;
+    /* Bold font weight for emphasis */
+    color: #333;
+    /* Darker text for better contrast */
+    margin: 10px 0;
+    /* Spacing for better separation from other elements */
+    display: block;
+    /* Ensures it's on its own line for emphasis */
+}
+
+.additional-price {
+    font-size: 1.2em;
+    /* Increased font size for the base price */
+    font-weight: bold;
+    /* Bold font weight for emphasis */
+    color: rgb(146, 29, 29);
+    /* Darker text for better contrast */
+    margin: 10px 0;
+    /* Spacing for better separation from other elements */
+    display: block;
+    /* Ensures it's on its own line for emphasis */
+}
+
+
+.total-price {
+    font-size: 3em;
+    /* Increased font size for the price */
+    font-weight: bold;
+    /* Bold font weight for emphasis */
+    color: #333;
+    /* Optionally, choose a color that stands out */
+    margin: 20px 0;
+    /* Spacing for better separation from other elements */
+    display: block;
+    /* Ensures it's on its own line for emphasis */
+}
+
+.recommendation {
+    font-size: 1.2em;
+    /* Slightly larger font for visibility */
+    color: #333;
+    /* Dark text for readability */
+    margin: 20px auto;
+    /* Centered with some margin */
+    width: 80%;
+    /* Controlled width for better reading */
+    text-align: center;
+    /* Center text alignment */
+}
+
+.coverage-congrats {
+    font-size: 1.4em;
+    /* Slightly larger than body text */
+    color: #28a745;
+    /* A positive, noticeable color */
+    margin-top: 20px;
+    /* Space from the above content */
+    font-weight: bold;
+    /* Bold for emphasis */
+}

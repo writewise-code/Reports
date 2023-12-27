@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WriteWise Insurance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <img src="./logo.png" alt="WriteWise Logo" class="logo">
+        </div>
+        <h1 class="main-title">Unlock America's Most Affordable & Flexible Generic Drug Plans Today! </h1>
+
+        <div class="card total-card" id="essentialPlan">
+            <h2>Essential Plan</h2>
+            <p>Already covers 86% of average generic drug claims in the US!</p>
+            <p class="price">Base Price: $15</p>
+        </div>
+
+        <p class="recommendation"><strong>Customized for you:</strong> Explore These Top 3 Coverage Options Tailored to
+            Your Past Claims!</p>
+
+
+        <div class="options-container">
+            <div class="card option" id="mecOption" onclick="toggleFeature('mec')">
+                <h3>Make it MEC-Compliant</h3>
+                <p>MEC-Compliant plans meet the minimum essential coverage required by the Affordable Care Act.</p>
+                <p class="additional-price">+$6/month</p>
+                <div class="toggle-button" id="toggleMec" data-feature="mec">
+                    <div class="toggle-slider"></div>
+                </div>
+            </div>
+            <div class="card option" id="insulinOption" onclick="toggleFeature('insulin')">
+                <h3>Add Insulin Coverage</h3>
+                <p>3% of individuals suffer from diabetes and need insulin.</p>
+                <p>Cover them now.</p>
+                <p class="additional-price">+$3/month</p>
+                <div class="toggle-button" id="toggleInsulin" data-feature="insulin">
+                    <div class="toggle-slider"></div>
+                </div>
+            </div>
+            <div class="card option" id="ophthalmicOption" onclick="toggleFeature('ophthalmic')">
+                <h3>Add Ophthalmic Agents</h3>
+                <p>Eye health matters.</p>
+                <p>5% of the population requires ophthalmic agents.</p>
+                <p class="additional-price">+$1/month</p>
+                <div class="toggle-button" id="toggleOphthalmic" data-feature="ophthalmic">
+                    <div class="toggle-slider"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card total-card">
+            <p class="coverage-congrats">Congrats 🎉 - 86% of your historical generic claims are covered with this plan!
+            </p>
+            <p>Your total monthly premium per member is:</p>
+            <p class="total-price">$<span id="price">15.00 </span></p>
+            <button class="insure-button">Get insured now</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
