@@ -186,3 +186,77 @@ body {
     font-weight: bold;
     /* Bold for emphasis */
 }
+
+.file-upload-container {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.file-upload-container input[type="file"] {
+    margin: 10px 0;
+}
+
+.file-upload-container label {
+    margin-left: 10px;
+}
+
+.file-upload-container input[type="file"] {
+    cursor: pointer;
+    padding: 10px;
+    margin: 20px auto;
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#loadingBar {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.file-upload-container input[type="file"] {
+    cursor: pointer;
+    padding: 12px 20px;
+    margin: 20px auto;
+    display: inline-block;
+    background-color: #4178BE;
+    /* Replace this with the exact color of the logo's background */
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.file-upload-container input[type="file"]:hover {
+    background-color: #365F91;
+    /* A darker shade for hover effect */
+    border-color: #29487D;
+    /* Slightly darker border on hover */
+}
+
+.progress-bar {
+    width: 80%;
+    background-color: #ddd;
+    padding: 3px;
+    border-radius: 6px;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.progress {
+    background-color: #4caf50;
+    height: 20px;
+    width: 0%;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}

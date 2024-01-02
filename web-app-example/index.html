@@ -10,62 +10,78 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="header">
+        <img src="./logo.png" alt="WriteWise Logo" class="logo">
+        <h1 class="main-title">Unlock America's Most Affordable & Flexible Generic Drug Plans Today!</h1>
+    </div>
 
-        <div class="header">
-            <img src="./logo.png" alt="WriteWise Logo" class="logo">
-        </div>
-        <h1 class="main-title">Unlock America's Most Affordable & Flexible Generic Drug Plans Today! </h1>
+    <div class="file-upload-container">
+        <p>Please upload your historical claims (only NDC / GPI, no PII is needed here).</p>
+        <input type="file" id="fileUpload">
+    </div>
 
-        <div class="card total-card" id="essentialPlan">
-            <h2>Essential Plan</h2>
-            <p>Already covers 86% of average generic drug claims in the US!</p>
-            <p class="price">Base Price: $15</p>
-        </div>
-
-        <p class="recommendation"><strong>Customized for you:</strong> Explore These Top 3 Coverage Options Tailored to
-            Your Past Claims!</p>
-
-
-        <div class="options-container">
-            <div class="card option" id="mecOption" onclick="toggleFeature('mec')">
-                <h3>Make it MEC-Compliant</h3>
-                <p>MEC-Compliant plans meet the minimum essential coverage required by the Affordable Care Act.</p>
-                <p class="additional-price">+$6/month</p>
-                <div class="toggle-button" id="toggleMec" data-feature="mec">
-                    <div class="toggle-slider"></div>
-                </div>
-            </div>
-            <div class="card option" id="insulinOption" onclick="toggleFeature('insulin')">
-                <h3>Add Insulin Coverage</h3>
-                <p>3% of individuals suffer from diabetes and need insulin.</p>
-                <p>Cover them now.</p>
-                <p class="additional-price">+$3/month</p>
-                <div class="toggle-button" id="toggleInsulin" data-feature="insulin">
-                    <div class="toggle-slider"></div>
-                </div>
-            </div>
-            <div class="card option" id="ophthalmicOption" onclick="toggleFeature('ophthalmic')">
-                <h3>Add Ophthalmic Agents</h3>
-                <p>Eye health matters.</p>
-                <p>5% of the population requires ophthalmic agents.</p>
-                <p class="additional-price">+$1/month</p>
-                <div class="toggle-button" id="toggleOphthalmic" data-feature="ophthalmic">
-                    <div class="toggle-slider"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card total-card">
-            <p class="coverage-congrats">Congrats 🎉 - 86% of your historical generic claims are covered with this plan!
-            </p>
-            <p>Your total monthly premium per member is:</p>
-            <p class="total-price">$<span id="price">15.00 </span></p>
-            <button class="insure-button">Get insured now</button>
+    <div id="loadingBar" style="display:none;">
+        <p>Analyzing your data...</p>
+        <!-- Custom Graphical Loading Bar -->
+        <div class="progress-bar">
+            <div class="progress"></div>
         </div>
     </div>
 
+    <div class="container" id="contentWrapper" style="display:none;">
+        <div class="container">
+            <div class="card total-card" id="essentialPlan">
+                <h2>Essential Plan</h2>
+                <p>Already covers 86% of average generic drug claims in the US!</p>
+                <p class="price">Base Price: $15</p>
+            </div>
+
+            <p class="recommendation"><strong>Customized for you:</strong> Explore These Top 3 Coverage Options Tailored
+                to
+                Your Past Claims!</p>
+
+
+            <div class="options-container">
+                <div class="card option" id="mecOption" onclick="toggleFeature('mec')">
+                    <h3>Make it MEC-Compliant</h3>
+                    <p>MEC-Compliant plans meet the minimum essential coverage required by the Affordable Care Act.</p>
+                    <p class="additional-price">+$6/month</p>
+                    <div class="toggle-button" id="toggleMec" data-feature="mec">
+                        <div class="toggle-slider"></div>
+                    </div>
+                </div>
+                <div class="card option" id="insulinOption" onclick="toggleFeature('insulin')">
+                    <h3>Add Insulin Coverage</h3>
+                    <p>3% of individuals suffer from diabetes and need insulin.</p>
+                    <p>Cover them now.</p>
+                    <p class="additional-price">+$3/month</p>
+                    <div class="toggle-button" id="toggleInsulin" data-feature="insulin">
+                        <div class="toggle-slider"></div>
+                    </div>
+                </div>
+                <div class="card option" id="ophthalmicOption" onclick="toggleFeature('ophthalmic')">
+                    <h3>Add Ophthalmic Agents</h3>
+                    <p>Eye health matters.</p>
+                    <p>5% of the population requires ophthalmic agents.</p>
+                    <p class="additional-price">+$1/month</p>
+                    <div class="toggle-button" id="toggleOphthalmic" data-feature="ophthalmic">
+                        <div class="toggle-slider"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card total-card">
+                <p class="coverage-congrats">Congrats 🎉 - 86% of your historical generic claims are covered with this
+                    plan!
+                </p>
+                <p>Your total monthly premium per member is:</p>
+                <p class="total-price">$<span id="price">15.00 </span></p>
+                <button class="insure-button">Get insured now</button>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
+
 
 </html>
