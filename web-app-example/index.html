@@ -15,9 +15,19 @@
         <h1 class="main-title">Unlock America's Most Affordable & Flexible Generic Drug Plans Today!</h1>
     </div>
 
-    <div class="file-upload-container">
-        <p>Please upload your historical claims (only NDC / GPI, no PII is needed here).</p>
-        <input type="file" id="fileUpload">
+    <div class="columns-container">
+
+        <div class="column">
+            <p>Enter your budget (Average Per Member Per Month):</p>
+            <input type="range" id="budgetSlider" min="10" max="30" value="20"> <!-- Default value set to 20 -->
+            <span><span id="budgetDisplay">20</span></span> <!-- Dollar sign added before the span -->
+        </div>
+
+        <div class="column">
+            <p>Please upload your historical claims (only NDC / GPI, no PII is needed here).</p>
+            <input class="upload-column" type="file" id="fileUpload">
+        </div>
+
     </div>
 
     <div id="loadingBar" style="display:none;">
@@ -29,9 +39,15 @@
     </div>
 
     <div class="container" id="contentWrapper" style="display:none;">
+        <h2 class="historical-data-offer">Here's what we offer you based on your historical data:</h2>
+
         <div class="container">
             <div class="card total-card" id="essentialPlan">
-                <h2>Essential Plan</h2>
+                <h2>
+                    Essential Plan
+                    <img src="./icons8-drugs-100.png" alt="Essential Plan Icon" class="plan-icon">
+                </h2>
+
                 <p>Already covers 86% of average generic drug claims in the US!</p>
                 <p class="price">Base Price: $15</p>
             </div>
