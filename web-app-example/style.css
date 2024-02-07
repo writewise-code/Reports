@@ -1,62 +1,53 @@
+/* General Body Styles */
 body {
-    font-family: 'Lato', sans-serif;
-    /* font-family: 'Arial', sans-serif; */
+    font-family: 'Gotham', sans-serif;
     margin: 0;
     padding: 0;
     background-color: rgba(173, 216, 230, 0.1);
     /* Very light and transparent blue */
-    text-align: center;
     color: #000;
-    /* Keep text in black */
+    text-align: center;
+    max-width: 3000px;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1100px;
+    background-color: #f2f2f2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     margin: auto;
     padding: 10px;
+    margin-bottom: 30px;
 }
 
-.main-title {
-    font-size: 1.5em;
-    /* Adjust the font size for better fit */
-    margin: 0 auto 20px;
-    /* Center align with auto margins */
-    width: 90%;
-    /* Set a wider width */
-    padding: 10px;
-    /* Add some padding */
-    line-height: 1.4;
-    /* Adjust line height for readability */
-    text-align: center;
-    /* Center text alignment */
-}
-
+/* Header Styles */
 .header img {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
 }
 
+
+.main-title,
+.customize-title,
+.plan-title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #303030;
+    /* Uniform color for titles */
+}
+
+/* Card Styles */
 .card {
-    background-color: rgba(100, 149, 237, 0.3);
-    /* Increase transparency */
+    background-color: rgba(100, 149, 237, 0.1);
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 28%;
-    /* Set a fixed width for all cards */
+    width: 1075px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     display: inline-block;
-    /* Align cards inline */
 }
 
-.options-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
+/* Toggle Button Styles */
 .toggle-button {
     background-color: #ffffff;
     border-radius: 20px;
@@ -69,7 +60,7 @@ body {
 }
 
 .toggle-slider {
-    background-color: rgba(100, 149, 237, 0.3);
+    background-color: rgba(30, 30, 30, 0.3);
     border-radius: 50%;
     position: absolute;
     top: 5px;
@@ -84,6 +75,7 @@ body {
     background-color: #4caf50;
 }
 
+/* Button Styles */
 .insure-button {
     background-color: #28a745;
     color: white;
@@ -94,13 +86,8 @@ body {
     cursor: pointer;
     transition: all 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    outline: none;
-    font-weight: bold;
-    margin-top: 20px;
     display: inline-block;
-    /* Center button in the card */
     width: 80%;
-    /* Larger button */
 }
 
 .insure-button:hover {
@@ -108,277 +95,59 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.total-card {
-    width: calc(58% + 20px);
-    background-color: rgba(48, 48, 48, 0.2);
-    margin: 5px auto;
-    display: block;
-}
-
-/* You may need to adjust the media query for responsiveness */
-@media (max-width: 1024px) {
-    .total-card {
-        width: 100%;
-        /* Full width on smaller screens */
-    }
-}
-
-.price {
-    font-size: 1.2em;
-    /* Increased font size for the base price */
+/* Price and Additional Price Styles */
+.price,
+.additional-price,
+.total-price {
     font-weight: bold;
-    /* Bold font weight for emphasis */
-    color: #333;
-    /* Darker text for better contrast */
-    margin: 10px 0;
-    /* Spacing for better separation from other elements */
+    font-size: 1.5em;
     display: block;
-    /* Ensures it's on its own line for emphasis */
+    margin: 10px 0;
 }
 
 .additional-price {
-    font-size: 1.2em;
-    /* Increased font size for the base price */
-    font-weight: bold;
-    /* Bold font weight for emphasis */
-    color: rgb(146, 29, 29);
-    /* Darker text for better contrast */
-    margin: 10px 0;
-    /* Spacing for better separation from other elements */
-    display: block;
-    /* Ensures it's on its own line for emphasis */
+    color: #303030;
 }
-
 
 .total-price {
     font-size: 3em;
-    /* Increased font size for the price */
-    font-weight: bold;
-    /* Bold font weight for emphasis */
-    color: #333;
-    /* Optionally, choose a color that stands out */
+    color: #303030;
     margin: 20px 0;
-    /* Spacing for better separation from other elements */
-    display: block;
-    /* Ensures it's on its own line for emphasis */
 }
 
-.recommendation {
-    font-size: 1.2em;
-    /* Slightly larger font for visibility */
-    color: #333;
-    /* Dark text for readability */
-    margin: 20px auto;
-    /* Centered with some margin */
-    width: 90%;
-    /* Controlled width for better reading */
-    text-align: center;
-    /* Center text alignment */
-}
-
-.coverage-congrats {
-    font-size: 1.4em;
-    /* Slightly larger than body text */
-    color: #28a745;
-    /* A positive, noticeable color */
-    margin-top: 20px;
-    /* Space from the above content */
-    font-weight: bold;
-    /* Bold for emphasis */
-}
-
-.file-upload-container {
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    background-color: #4178BE;
-
-}
-
-.file-upload-container input[type="file"] {
-    margin: 10px 0;
-    background-color: #4178BE;
-}
-
-.file-upload-container label {
-    margin-left: 10px;
-}
-
-.file-upload-container input[type="file"] {
-    cursor: pointer;
-    padding: 10px;
-    margin: 20px auto;
-    display: inline-block;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-#loadingBar {
-    text-align: center;
-    /* Center the text */
+/* Options Container */
+.options-container {
     display: flex;
-    justify-content: center;
-    /* Center the content horizontally */
-    align-items: center;
-    /* Center the content vertically if needed */
+    justify-content: space-between;
+    flex-wrap: nowrap;
 }
 
-.progress-bar {
-    width: 50%;
-    /* Adjust the width as per your design */
-    margin: auto;
-    /* Centers the progress bar within the div */
-    /* Rest of your progress-bar styles */
-}
-
-
-.file-upload-container input[type="file"] {
-    cursor: pointer;
-    padding: 12px 20px;
-    margin: 20px auto;
-    display: inline-block;
-    background-color: #4178BE;
-    /* Replace this with the exact color of the logo's background */
-    border: 2px solid transparent;
-    border-radius: 5px;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s, border-color 0.3s;
-    border: 1px solid #365F91;
-}
-
-.file-upload-container input[type="file"]:hover {
-    background-color: #365F91;
-    /* A darker shade for hover effect */
-    border-color: #29487D;
-    /* Slightly darker border on hover */
-}
-
-.progress-bar {
-    width: 75%;
-    justify-content: center;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.progress {
-    height: 20px;
-    justify-content: center;
-    background-color: #4caf50;
-    width: 0%;
-    border-radius: 5px;
-    transition: width 0.4s ease-in-out;
-}
-
-#budgetInput {
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #365F91;
-}
-
-.historical-data-offer {
-    margin-top: 0px;
-    font-style: italic;
-}
-
-.input-container {
-    display: flex;
-    justify-content: center;
-    /* Adjust to center the columns */
-    gap: 20px;
-    /* Adjust the space between columns */
-    margin-bottom: 20px;
-}
-
-.column {
+.card.option {
     flex: 1;
-    /* Each column takes up equal space */
-    padding: 5px;
-    /* Reduced padding */
-}
-
-#budgetInput,
-#fileUpload {
-    width: 50%;
-    /* Make inputs take full width of their column */
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.plan-icon {
-    height: 1em;
-    /* Set the height to align with the text size */
-    vertical-align: middle;
-    /* Align the icon with the middle of the text */
-    margin-right: 0.5em;
-    /* Add some space between the icon and the text */
-}
-
-/* Slider track */
-#budgetSlider {
-    -webkit-appearance: none;
-    width: 40%;
-    height: 5px;
-    border-radius: 5px;
-    background: #365F91;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-}
-
-/* Slider thumb */
-#budgetSlider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #365F91;
-    cursor: pointer;
-}
-
-#budgetSlider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #365F91;
-    cursor: pointer;
-}
-
-/* Display value with the dollar sign */
-#budgetDisplay {
-    display: inline-block;
-    margin-left: 10px;
-    color: #365F91;
-    font-weight: bold;
-}
-
-.upload-column {
-    background-color: rgba(54, 95, 145, 0.7);
-    /* Replace with the actual color code from the logo */
-    /* Other styles for padding, margins, etc., as needed */
-}
-
-.columns-container {
+    /* Allows the cards to grow and fill the container equally */
+    margin: 10px;
     display: flex;
-    justify-content: center;
-    /* Adjusts alignment */
-    gap: 20px;
-    /* Controls the space between columns */
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.column {
-    flex: 1;
-    /* Makes each column take equal width */
-    padding: 10px;
-    /* Adds some padding inside each column */
+@media (max-width: 1000px) {
+    .options-container {
+        flex-direction: column;
+    }
+
+    .card.option {
+        width: 100%;
+        /* Adjusts to stack vertically on smaller screens */
+    }
+}
+
+.card-selected {
+    background-color: #e0ffe0;
+    /* Light green background for selected cards */
+}
+
+
+.customizePlanContainer {
+    width: 100%;
 }

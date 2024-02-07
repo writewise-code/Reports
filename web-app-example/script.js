@@ -1,82 +1,72 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var baseCoverage = 86;
-    var additionalPrices = {
-        insulin: 3,
+    const additionalPrices = {
+        insulin: 10,
         mec: 6,
-        ophthalmic: 1
+        inhalers: 8,
+        analgesic: 4
     };
-    var coverageIncrease = {
-        insulin: 4,
-        mec: 6,
-        ophthalmic: 1
+    const coverageIncrease = {
+        insulin: 5,
+        mec: 4,
+        inhalers: 3,
+        analgesic: 1
     };
 
-    var coverageDisplay = document.querySelector('.coverage-congrats');
-    var basePriceDisplay = document.querySelector('.price'); // Select the base price element
-    var totalPriceDisplay = document.getElementById("price");
+    let baseCoverage = 86; // Starting point of coverage percentage
+    let baseBudget = 20; // Starting budget
 
-    var fileUpload = document.getElementById('fileUpload');
-    var contentWrapper = document.getElementById('contentWrapper');
-    var loadingBar = document.getElementById('loadingBar');
-    var loadingBarText = loadingBar.querySelector('p'); // Select the loading bar text element
+    function updateTotalPriceAndCoverage() {
+        let totalPrice = baseBudget;
+        let totalCoverage = baseCoverage;
 
-    fileUpload.addEventListener('change', function () {
-        if (this.files.length > 0) {
-            loadingBar.style.display = 'block';
-            let progress = 0;
-            const interval = setInterval(function () {
-                progress += 5; // Increment progress
-                document.querySelector('.progress').style.width = progress + '%';
-                if (progress === 50) {
-                    loadingBarText.textContent = 'Predicting optimal formulary...'; // Change text at 50%
-                }
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    setTimeout(function () {
-                        loadingBar.style.display = 'none';
-                        contentWrapper.style.display = 'block';
-                    }, 500); // Short delay after reaching 100%
-                }
-            }, 150); // Update interval (150ms for a quicker simulation)
-        }
-    });
-
-    function updateTotalPriceAndCoverage(budget) {
-        var totalPrice = budget; // Start with the budget as the base price
-        var totalCoverage = baseCoverage;
-
-        Object.keys(additionalPrices).forEach(function (key) {
-            if (document.getElementById("toggle" + key.charAt(0).toUpperCase() + key.slice(1)).classList.contains('toggle-active')) {
-                totalPrice += additionalPrices[key]; // Add the option price
-                totalCoverage += coverageIncrease[key];
+        Object.keys(additionalPrices).forEach(feature => {
+            const toggleElement = document.getElementById(`toggle${capitalizeFirstLetter(feature)}`);
+            if (toggleElement.classList.contains('toggle-active')) {
+                totalPrice += additionalPrices[feature];
+                totalCoverage += coverageIncrease[feature];
             }
         });
 
-        basePriceDisplay.textContent = `Base Price: $${budget}`; // Update the base price display
-        totalPriceDisplay.textContent = totalPrice.toFixed(2);
-        coverageDisplay.innerHTML = `Congrats 🎉<br><br>${totalCoverage}% of your historical generic claims are covered with this plan!`;
+        document.getElementById('price').textContent = totalPrice.toFixed(2);
+        document.querySelector('.coverage-congrats').innerHTML = `<strong>Congrats</strong> 🎉<br>Your formulary covers more than ${totalCoverage}% of Generic Claims in the US!`;
     }
 
-    // Event listeners for toggle buttons
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function syncToggles(clickedFeature, activating) {
+        const allFeatures = ['insulin', 'mec', 'inhalers', 'analgesic'];
+        const clickedIndex = allFeatures.indexOf(clickedFeature);
+
+        if (activating) {
+            // Activate all previous features up to and including the clicked one
+            allFeatures.forEach((feature, index) => {
+                if (index <= clickedIndex) {
+                    document.getElementById(`toggle${capitalizeFirstLetter(feature)}`).classList.add('toggle-active');
+                    document.getElementById(feature + 'Option').classList.add('card-selected');
+                }
+            });
+        } else {
+            // Deactivate clicked feature and all subsequent features
+            allFeatures.forEach((feature, index) => {
+                if (index >= clickedIndex) {
+                    document.getElementById(`toggle${capitalizeFirstLetter(feature)}`).classList.remove('toggle-active');
+                    document.getElementById(feature + 'Option').classList.remove('card-selected');
+                }
+            });
+        }
+
+        updateTotalPriceAndCoverage();
+    }
+
     document.querySelectorAll('.toggle-button').forEach(button => {
         button.addEventListener('click', function () {
-            this.classList.toggle('toggle-active');
-            var budget = parseInt(document.getElementById('budgetSlider').value);
-            updateTotalPriceAndCoverage(budget);
+            const featureId = this.id.replace('toggle', '').toLowerCase();
+            // Determine if we are activating or deactivating the feature
+            const activating = !this.classList.contains('toggle-active');
+
+            syncToggles(featureId, activating);
         });
     });
-
-    // Function to update plan prices based on the slider input
-    function updatePlanPrices() {
-        var budget = parseInt(document.getElementById('budgetSlider').value);
-        document.getElementById('budgetDisplay').textContent = `$${budget}`; // Display the slider value with a dollar sign
-
-        updateTotalPriceAndCoverage(budget); // Update the total price and coverage
-    }
-
-    // Event listener for the slider input
-    document.getElementById('budgetSlider').addEventListener('input', updatePlanPrices);
-
-    // Initial update with the default slider value
-    updatePlanPrices();
 });
